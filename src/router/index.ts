@@ -9,11 +9,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home',
       component: AppLayout,
       meta: {title: 'Bluesky Team Tracker'},
       children: [
-        { path: 'home', component: HomeView, meta: {title: 'Bluesky Team Tracker'} },
+        { path: '', component: HomeView, meta: {title: 'Bluesky Team Tracker'} },
         { path: 'team-members', component: TeamMembers, meta: {title: 'Bluesky Team Tracker'} },
         {
           path: 'user/:did', // Dynamic route for UserView with an "id" parameter

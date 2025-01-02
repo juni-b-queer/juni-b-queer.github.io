@@ -6,12 +6,10 @@
         <ul>
           <li class="nav-title">Bluesky team activity tracker</li>
           <li class="nav-item">
-            <router-link to="/home" active-class="router-link-active">Home</router-link>
+            <router-link to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/team-members" active-class="router-link-active"
-              >Team Members</router-link
-            >
+            <router-link to="/team-members">Team Members</router-link>
           </li>
         </ul>
       </nav>
@@ -108,12 +106,6 @@
     background-color: #007bff;
     color: #fff;
   }
-}
-
-::v-deep(.router-link-active) {
-  font-weight: bold;
-  color: #fff !important;
-  background-color: #007bff;
 }
 
 /* Content: Avoid overlapping and allow proper flex behavior */
