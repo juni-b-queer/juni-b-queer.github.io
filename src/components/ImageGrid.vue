@@ -32,7 +32,7 @@ export default defineComponent({
         { did: 'did:plc:44ybard66vv44zksje25o7dz' },
         { did: 'did:plc:yk4dd2qkboz2yv6tpubpc6co', pds: 'https://pds.dholms.xyz' },
         { did: 'did:plc:vpkhqolt662uhesyj6nxm7ys' },
-        { did: 'did:plc:did:plc:q6gjnaw2blty4crticxkmujt' },
+        { did: 'did:plc:q6gjnaw2blty4crticxkmujt' },
         { did: 'did:plc:vzmlifz3ghar4cu2hj3srga2' },
         { did: 'did:plc:l3rouwludahu3ui3bt66mfvj' },
 
