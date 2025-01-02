@@ -1,0 +1,35 @@
+@import './base.css';
+
+#app {
+  width: 100%; /* Allow the full width of the viewport */
+  height: auto; /* Maintain height as per content */
+  margin: 0; /* Remove margin since width is now dynamic */
+  padding: 1rem; /* Apply padding for inner spacing */
+  font-weight: normal;
+}
+
+/*a,*/
+/*.green {*/
+/*  text-decoration: none;*/
+/*  color: hsla(160, 100%, 37%, 1);*/
+/*  transition: 0.4s;*/
+/*  padding: 3px;*/
+/*}*/
+
+/*@media (hover: hover) {*/
+/*  a:hover {*/
+/*    background-color: hsla(160, 100%, 37%, 0.2);*/
+/*  }*/
+/*}*/
+
+@media (min-width: 1024px) {
+  body {
+    display: block; /* Changed from flex to block for consistent scaling */
+  }
+
+  #app {
+    width: 100%; /* Ensure full width on larger screens */
+    padding: 1rem; /* Maintain padding for spacing, adapting to full width */
+    display: block; /* Avoid constrained layouts like grid here */
+  }
+}
