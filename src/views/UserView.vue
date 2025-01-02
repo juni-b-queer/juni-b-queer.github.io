@@ -104,7 +104,7 @@ export default defineComponent({
 }
 
 .user-info {
-  color: #fff;
+  color: #7f7f7f;
   & .display-name {
     font-size: 2em;
   }
