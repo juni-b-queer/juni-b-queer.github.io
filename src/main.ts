@@ -12,10 +12,8 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.config.globalProperties.$atpAgent = agent
+document.title = 'Bluesky Team Tracker'
 
-router.afterEach(() => {
-  document.title = 'Bluesky Team Tracker'
-})
 
 app.mount('#app')
 

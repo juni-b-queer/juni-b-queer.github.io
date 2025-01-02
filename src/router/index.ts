@@ -8,6 +8,7 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
+
       path: '/',
       component: AppLayout,
       meta: {title: 'Bluesky Team Tracker'},

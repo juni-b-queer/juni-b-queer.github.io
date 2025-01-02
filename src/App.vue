@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <title>Bluesky Team Tracker</title>
+
   <RouterView />
 </template>
 
