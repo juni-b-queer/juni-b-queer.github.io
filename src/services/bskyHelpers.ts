@@ -94,15 +94,29 @@ const getRecord = async (uri: string) => {
     return { error: { message: 'Failed to parse the URI' } }
   }
 
-  const path = await getBasePath(repo)
-
-  console.log(path)
-
-  return await callAPI(path + '/xrpc/com.atproto.repo.getRecord', 'GET', {
+  const defaultPathResponse = await callAPI(baseSocialPath + '/xrpc/com.atproto.repo.getRecord', 'GET', {
     repo: repo,
     collection: collection,
     rkey: rkey,
   })
+
+  if(defaultPathResponse.error){
+    console.log(defaultPathResponse)
+    const path = await getBasePath(repo)
+    if(path === baseSocialPath){
+      return defaultPathResponse;
+    }else{
+      return await callAPI(path + '/xrpc/com.atproto.repo.getRecord', 'GET', {
+        repo: repo,
+        collection: collection,
+        rkey: rkey,
+      })
+    }
+  }else{
+    return defaultPathResponse;
+  }
+
+
 }
 
 const getPlcDoc = async (did: string) => {
@@ -125,14 +139,37 @@ const getActorRecords = async (
   cursor: string | null = null,
   pds: string | null = null,
 ) => {
-  const path = (await getBasePath(did)) ?? pds
 
-  return await callAPI(path + '/xrpc/com.atproto.repo.listRecords', 'GET', {
+
+  const defaultPathResponse = await callAPI(pds ?? baseSocialPath + '/xrpc/com.atproto.repo.listRecords', 'GET', {
     repo: did,
     collection: collection,
     limit: 5,
     cursor: cursor,
   })
+  console.log(defaultPathResponse)
+  console.log('here')
+
+  if (defaultPathResponse.error) {
+    const path = await getBasePath(did)
+    console.log(path)
+    if (path === baseSocialPath) {
+      console.log('if')
+      return defaultPathResponse;
+    } else {
+      console.log('else')
+      return await callAPI(path + '/xrpc/com.atproto.repo.listRecords', 'GET', {
+        repo: did,
+        collection: collection,
+        limit: 5,
+        cursor: cursor,
+      })
+    }
+
+  }else{
+    console.log('if')
+    return defaultPathResponse;
+  }
 }
 
 const getActorLikes = async (

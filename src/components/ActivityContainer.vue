@@ -87,6 +87,8 @@ export default defineComponent({
             this.activityType === 'Like'
               ? await getActorLikes(this.did, cursor, this.pds)
               : await getActorReposts(this.did, cursor, this.pds)
+
+
           this.cursor = actResponse.cursor
 
           for (const activity of actResponse.records) {
@@ -153,7 +155,7 @@ export default defineComponent({
   font-size: 1.3em;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #fff;
+  color: #007bff;
 }
 
 .container {
