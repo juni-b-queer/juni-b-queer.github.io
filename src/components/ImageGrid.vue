@@ -44,7 +44,7 @@ export default defineComponent({
 <style scoped>
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 20px;
   place-items: center;
   padding-bottom: 36px;
